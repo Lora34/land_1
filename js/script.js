@@ -1,6 +1,8 @@
 const cards = document.querySelectorAll('.card');
+const progress = document.querySelector('.progress');
 
 
+window.addEventListener('scroll', progressBar);
 /* Функции */
 function startRotate(event) {
     const cardItem = this.querySelector('.card-item');
@@ -22,6 +24,14 @@ function parallax(e) {
     });
 }
 
+function progressBar(e) {
+    let windowScroll = document.body.scrollTop || document.documentElement.scroll;
+    let windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let per = windowScroll / windowHeight * 100 ;
+
+    progress.style.width = per + '%';
+}
+
 /* Обработчики */
 for (let i = 0; i < cards.length; i++) {
     const card = cards[i];
@@ -30,4 +40,3 @@ for (let i = 0; i < cards.length; i++) {
 }
 
 document.addEventListener('mousemove', parallax);
-
