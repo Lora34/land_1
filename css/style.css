@@ -4,9 +4,42 @@ body {
 * {
     box-sizing: border-box;
 }
+img {
+    max-width: 100%;
+}
+.scene {
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+.layer {
+    position: absolute;
+    left: -10%;
+    top: 0;
+    width: 110%;
+    height: 100%;
+}
+.layer-1 {
+    background: url('../img/parallax_bg.jpg') center no-repeat;
+    background-size: cover;
+}
+.layer-2 {
+    background: url('../img/parallax_layer1.png') center no-repeat;
+    background-size: cover;
+}
+.layer-3 {
+    background: url('../img/parallax_layer2.png') center no-repeat;
+    background-size: cover;
+}
 .container {
+    z-index: 100 ;
     display: flex;
-    height: 100vh;
+    height: 1080px;
+    margin-top: 838px;
     background-color: #3498db;
     justify-content: space-around;
     align-items: center;

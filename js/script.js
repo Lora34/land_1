@@ -1,11 +1,7 @@
 const cards = document.querySelectorAll('.card');
 
-for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
-    card.addEventListener('mousemove', startRotate);
-    card.addEventListener('mouseout', stopRotate);
-}
 
+/* Функции */
 function startRotate(event) {
     const cardItem = this.querySelector('.card-item');
     const halfHeight = cardItem.offsetHeight / 2;
@@ -17,3 +13,21 @@ function stopRotate(event) {
     const cardItem = this.querySelector('.card-item');
     cardItem.style.transform = 'rotate(0)';
 }
+
+
+function parallax(e) {
+    this.querySelectorAll('.layer').forEach(layer => {
+        let speed = layer.getAttribute('data-speed');
+        layer.style.transform = `translateX(${e.clientX*speed/1000}px)`
+    });
+}
+
+/* Обработчики */
+for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
+    card.addEventListener('mousemove', startRotate);
+    card.addEventListener('mouseout', stopRotate);
+}
+
+document.addEventListener('mousemove', parallax);
+
