@@ -3,27 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Кредитное бюро</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="progress"></div>
     <div class="scene">
         <div data-speed="10" class="layer layer-1"></div>
         <div data-speed="40" class="layer layer-2"></div>
         <div data-speed="80" class="layer layer-3"></div>
     </div>
-    <div class="container">
-        <div class="card">
-            <div class="card-item"></div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 fixed-top">
+            <a class="navbar-brand">Кредитное бюро</a>
+            <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="my-nav" class="collapse navbar-collapse d-flex justify-content-between">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1">Цены</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1">Реклама</a>
+                    </li>
+                </ul>
+                <form action="" class="search-form w-25">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Поиск" aria-label="Поиск" aria-describedby="example">
+                        <button class="btn btn-outline-light">Поиск</button>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="main py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="h1 mt-4 mb-2">Заполните заявку на кредит и&nbsp;узнайте решение за 5 минут</h1>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="mb-2" for="fio">ФИО</label>
+                                    <input id="fio" class="form-control fio" type="text" name="fio" placeholder="Например, Ивано Иван">
+                                </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="mb-2" for="job">Место работы</label>
+                                    <input id="job" class="form-control job" type="text" name="job" placeholder="Например, МВидео">
+                                </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="mb-2" for="real-adress">Фактический адресс</label>
+                                    <input id="real-adress" class="form-control address" type="address" name="real-adress" placeholder="Например, Улица Ленина">
+                                </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="date">Дата рождения</label>
+                                    <input id="date" class="form-control" type="date" name="date">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="address">Адресс прописки</label>
+                                    <input id="address" class="form-control address" type="address" name="address" placeholder="Например, Улица Ленина">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label class="mb-2" for="family">Семейное положение</label>
+                                    <select id="family" class="form-control" name="family">
+                                        <option>Холост</option>
+                                        <option>Женат/замужем</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.row -->
+                        <button type="submit" class="btn btn-primary mt-4">Отправить заявку</button>
+                    </div>
+                    <!-- /.col-md-6 -->
+                    <div class="col-md-5 offset-md-1 mr-5">
+                        <img src="img/img.jpg" alt="" class="mw-100 rounded">
+                    </div>
+                    <!-- /.col-md-5 -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </section>
+        <div class="container">
+            <div class="card">
+                <div class="card-item"></div>
+            </div>
+            <div class="card">
+                <div class="card-item"></div>
+            </div>
+            <div class="card">
+                <div class="card-item"></div>
+            </div>
         </div>
-        <div class="card">
-            <div class="card-item"></div>
+        <div class="progress-ring__bg">
+            <svg class="progress-ring" width="120" height="120">
+                <circle 
+                    class="progress-ring__circle"
+                    stroke="#000"
+                    stroke-width="4"
+                    cx="60"
+                    cy="60"
+                    r="52"
+                    fill="transparent"
+                />
+            </svg>
+            <input type="number" class="percent">
         </div>
-        <div class="card">
-            <div class="card-item"></div>
-        </div>
-    </div>
+        <div class="progress"></div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
